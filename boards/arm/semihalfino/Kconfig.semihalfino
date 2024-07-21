@@ -1,0 +1,2 @@
+config BOARD_SEMIHALFINO
+    select SOC_RP2040

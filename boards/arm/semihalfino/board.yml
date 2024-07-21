@@ -1,0 +1,7 @@
+# SPDX-License-Identifier: MIT
+
+board:
+  name: semihalfino
+  vendor: semihalf
+  socs:
+  - name: rp2040

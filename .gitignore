@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Prerequisites
 *.d
 
@@ -53,3 +54,7 @@ dkms.conf
 
 # West build dir
 /build
+
+# Misc
+~*
+*.bak

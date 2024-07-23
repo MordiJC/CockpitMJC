@@ -1,0 +1,28 @@
+# Copyright (c) 2022-2023 XiNGRZ
+# SPDX-License-Identifier: MIT
+
+description: SN74HC595 shift register, using GPIO bit-bang
+
+compatible: "ti,sn74hc595-bitbang"
+
+include: gpio-controller.yaml
+
+properties:
+  "#gpio-cells":
+    const: 2
+
+  ser-gpios:
+    type: phandle-array
+    required: true
+
+  srclk-gpios:
+    type: phandle-array
+    required: true
+
+  rclk-gpios:
+    type: phandle-array
+    required: true
+
+gpio-cells:
+  - pin
+  - flags

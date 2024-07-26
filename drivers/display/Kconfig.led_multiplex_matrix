@@ -1,0 +1,12 @@
+# Copyright (c) 2024 Jakub Czapiga
+# SPDX-License-Identifier: Apache-2.0
+
+config DISPLAY_LED_MULTIPLEX_MATRIX
+	bool "LED matrix driven by GPIOs"
+	default y
+	help
+	  Enable driver for a LED matrix with rows and columns driven by
+	  GPIOs. Assignment of GPIOs to rows and columns and the mapping
+	  of those to pixels are specified in properties
+	  of a "led-multiplex-matrix" compatible node in devicetree.
+	  The driver uses one TIMER instance.

@@ -15,6 +15,7 @@
                 zephyr,console = &uart0;
                 zephyr,shell-uart = &uart0;
                 zephyr,code-partition = &code_partition;
+		zephyr,display = &led_matrix;
         };
 
         aliases {
@@ -26,10 +27,33 @@
 		compatible = "ti,sn74hc595-bitbang";
 		status = "okay";
 		gpio-controller;
+		ngpios = <14>;
 		#gpio-cells = <2>;
 		ser-gpios = <&gpio0 19 GPIO_ACTIVE_LOW>;
 		srclk-gpios = <&gpio0 18 GPIO_ACTIVE_LOW>;
 		rclk-gpios = <&gpio0 20 GPIO_ACTIVE_LOW>;
+	};
+
+	led_matrix: led_matrix {
+		compatible = "led-multiplex-matrix";
+		status = "okay";
+		width = <7>;
+		height = <7>;
+		row-gpios = <&gpioex 7 GPIO_ACTIVE_LOW>,
+			    <&gpioex 8 GPIO_ACTIVE_LOW>,
+			    <&gpioex 9 GPIO_ACTIVE_LOW>,
+			    <&gpioex 10 GPIO_ACTIVE_LOW>,
+			    <&gpioex 11 GPIO_ACTIVE_LOW>,
+			    <&gpioex 12 GPIO_ACTIVE_LOW>,
+			    <&gpioex 13 GPIO_ACTIVE_LOW>;
+		col-gpios = <&gpioex 0 GPIO_ACTIVE_HIGH>,
+			    <&gpioex 1 GPIO_ACTIVE_HIGH>,
+			    <&gpioex 2 GPIO_ACTIVE_HIGH>,
+			    <&gpioex 3 GPIO_ACTIVE_HIGH>,
+			    <&gpioex 4 GPIO_ACTIVE_HIGH>,
+			    <&gpioex 5 GPIO_ACTIVE_HIGH>,
+			    <&gpioex 6 GPIO_ACTIVE_HIGH>;
+		refresh-frequency = <60>;
 	};
 };
 

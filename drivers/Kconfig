@@ -1,3 +1,6 @@
 # SPDX-License-Identifier: MIT
 
+menu "Drivers"
 rsource "gpio/Kconfig"
+rsource "display/Kconfig"
+endmenu

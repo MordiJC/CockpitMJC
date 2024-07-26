@@ -1,0 +1,28 @@
+# Copyright (c) 2024 Jakub Czapiga
+# SPDX-License-Identifier: Apache-2.0
+
+description: |
+  Generic LED multiplexed grid matrix (LED arranged in grid controlled by GPIOs)
+
+compatible: "led-multiplex-matrix"
+
+include: display-controller.yaml
+
+properties:
+  row-gpios:
+    type: phandle-array
+    required: true
+    description: |
+      Array of GPIOs to be used as rows of the matrix.
+
+  col-gpios:
+    type: phandle-array
+    required: true
+    description: |
+      Array of GPIOs to be used as columns of the matrix.
+
+  refresh-frequency:
+    type: int
+    required: true
+    description: |
+      Frequency of refreshing the matrix, in Hz.
